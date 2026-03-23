@@ -1,0 +1,40 @@
+.page-shell {
+  min-height: calc(100svh - 88px);
+  display: flex;
+  align-items: center;
+  padding: 2rem 1.25rem;
+}
+
+.page-content {
+  width: 100%;
+  max-width: 56rem;
+  margin: 0 auto;
+}
+
+.page-kicker {
+  font-size: 0.75rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #f07232;
+  margin-bottom: 0.75rem;
+}
+
+.page-title {
+  font-size: clamp(2rem, 8vw, 4.25rem);
+  line-height: 0.95;
+  margin: 0;
+}
+
+.page-text {
+  margin-top: 1rem;
+  max-width: 38rem;
+  font-size: clamp(1rem, 3vw, 1.125rem);
+  color: #d8d8d8;
+}
+
+@media (min-width: 1024px) {
+  .page-shell {
+    min-height: calc(100svh - 96px);
+    padding: 4rem 3rem;
+  }
+}
