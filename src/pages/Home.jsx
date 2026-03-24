@@ -1,15 +1,20 @@
+import HeroSection from "../components/HeroSection";
+import PortfolioSection from "../components/PortfolioSection";
+import ServiceSection from "../components/ServiceSection";
+import StorySection from "../components/StorySection";
+import StudioSection from "../components/StudioSection";
+import TestimonialSection from "../components/TestimonialSection";
+
 const Home = () => {
   return (
-    <section className="page-shell">
-      <div className="page-content">
-        <p className="page-kicker">Cinestar</p>
-        <h1 className="page-title">Forside</h1>
-        <p className="page-text">
-          Global styles, routing and mobile header are now set up. Next we can
-          start implementing the frontpage sections from your design one by one.
-        </p>
-      </div>
-    </section>
+    <>
+      <HeroSection />
+      <StudioSection />
+      <PortfolioSection />
+      <ServiceSection />
+      <StorySection />
+      <TestimonialSection />
+    </>
   );
 };
 
