@@ -24,19 +24,18 @@ body {
   min-height: 100svh;
   background-color: var(--color-bg);
   color: var(--color-text);
+  font-family: var(--font-sans);
+  line-height: 1.5;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+:where(h1, h2, h3, h4, h5, h6) {
   font-family: var(--font-display);
-  color: var(--color-text);
 }
 
-a {
-  color: inherit;
+:where(a) {
   text-decoration: none;
+}
+
+:where(input, button, textarea, select) {
+  font-family: var(--font-sans);
 }

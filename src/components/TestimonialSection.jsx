@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useState } from "react";
 import { fetchReviews } from "../services/reviews.service";
 
 const fallbackReviews = [
@@ -10,6 +10,9 @@ const fallbackReviews = [
     rating: 5,
   },
 ];
+
+const staticHeadlineQuote =
+  "Cinestar er en fantastisk samarbejdspartner, der formår at kombinere kreativitet med professionalisme. Deres evne til at skabe unikke og engagerende produktioner er imponerende, og resultatet taler altid for sig selv.";
 
 const TestimonialSection = () => {
   const [reviews, setReviews] = useState([]);
@@ -45,11 +48,6 @@ const TestimonialSection = () => {
       isMounted = false;
     };
   }, []);
-
-  const activeReview = useMemo(() => {
-    if (reviews.length === 0) return fallbackReviews[0];
-    return reviews[currentIndex] || reviews[0];
-  }, [reviews, currentIndex]);
 
   const hasMultiple = reviews.length > 1;
 
@@ -96,7 +94,7 @@ const TestimonialSection = () => {
           </h2>
 
           <p className="mt-6 text-center text-[18px] font-medium leading-[27px] text-white lg:mx-auto lg:max-w-[720px] lg:text-[32px] lg:leading-[44px]">
-            “{activeReview.text}”
+            “{staticHeadlineQuote}”
           </p>
         </header>
 

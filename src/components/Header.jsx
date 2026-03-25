@@ -80,7 +80,12 @@ const Header = () => {
           className="fixed inset-0 z-[60] bg-black px-10 pt-6 sm:px-12"
         >
           <div className="flex items-center justify-between">
-            <NavLink to="/" aria-label="Gå til forsiden" className="shrink-0">
+            <NavLink
+              to="/"
+              aria-label="Gå til forsiden"
+              className="shrink-0"
+              onClick={() => setMobileOpen(false)}
+            >
               <img
                 src="/images/logo.png"
                 alt="Cinestar"
@@ -103,6 +108,7 @@ const Header = () => {
                 <li key={item.path}>
                   <NavLink
                     to={item.path}
+                    onClick={() => setMobileOpen(false)}
                     className={({ isActive }) =>
                       `block text-[36px] font-semibold uppercase leading-none tracking-[0.08em] transition-colors duration-200 ${isActive ? "text-[#F07232]" : "text-white"}`
                     }
