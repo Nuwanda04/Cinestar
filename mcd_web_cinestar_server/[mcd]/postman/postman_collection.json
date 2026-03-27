@@ -1,0 +1,900 @@
+{
+	"info": {
+		"_postman_id": "b125638a-33f9-4703-8a40-a17c2845628b",
+		"name": "MCD - Cinestar -v2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19586236",
+		"_collection_link": "https://winter-meadow-329802.postman.co/workspace/HjerteWeb~0603ec6e-9b75-4cba-ad92-d41d64715336/collection/19586236-b125638a-33f9-4703-8a40-a17c2845628b?action=share&source=collection_link&creator=19586236"
+	},
+	"item": [
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Users",
+					"item": [
+						{
+							"name": "Get Users",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{server_path}}/users",
+									"host": [
+										"{{server_path}}"
+									],
+									"path": [
+										"users"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "User",
+					"item": [
+						{
+							"name": "Add User",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "authorization",
+										"value": "Bearer {{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "Postman",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "postman",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "postman@mediacollege.dk",
+											"type": "text"
+										},
+										{
+											"key": "file",
+											"type": "file",
+											"src": []
+										},
+										{
+											"key": "role",
+											"value": "guest",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{server_path}}/user",
+									"host": [
+										"{{server_path}}"
+									],
+									"path": [
+										"user"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update User",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "authorization",
+										"value": "Bearer {{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "id",
+											"value": "6714ea59ecbe572ee4e02d64",
+											"type": "text"
+										},
+										{
+											"key": "name",
+											"value": "Postman Pat",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "postman@mediacollege.dk",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "file",
+											"type": "file",
+											"src": [],
+											"disabled": true
+										},
+										{
+											"key": "password",
+											"value": "1234",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "role",
+											"value": "guest",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "{{server_path}}/user",
+									"host": [
+										"{{server_path}}"
+									],
+									"path": [
+										"user"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete User",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "authorization",
+										"value": "Bearer {{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{server_path}}/user/6714ea59ecbe572ee4e02d64",
+									"host": [
+										"{{server_path}}"
+									],
+									"path": [
+										"user",
+										"6714ea59ecbe572ee4e02d64"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get User ID",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{server_path}}/user/6788d4cfaba2c0f23e227b11",
+									"host": [
+										"{{server_path}}"
+									],
+									"path": [
+										"user",
+										"6788d4cfaba2c0f23e227b11"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Messages",
+			"item": [
+				{
+					"name": "Messages",
+					"item": [
+						{
+							"name": "Get All Messages",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{server_path}}/messages",
+									"host": [
+										"{{server_path}}"
+									],
+									"path": [
+										"messages"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Message",
+					"item": [
+						{
+							"name": "Post Message",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"Postman Name 1266\",\r\n    \"subject\":\"Postman Subject\", \r\n    \"description\":\"Postman description\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{server_path}}/message",
+									"host": [
+										"{{server_path}}"
+									],
+									"path": [
+										"message"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Message",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "authorization",
+										"value": "Bearer {{token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{server_path}}/message/68f748789847077e0de78f4d",
+									"host": [
+										"{{server_path}}"
+									],
+									"path": [
+										"message",
+										"68f748789847077e0de78f4d"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Message",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "authorization",
+										"value": "Bearer {{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": \"68f748789847077e0de78f4d\",\r\n    \"status\": true\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{server_path}}/message",
+									"host": [
+										"{{server_path}}"
+									],
+									"path": [
+										"message"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Faqs",
+			"item": [
+				{
+					"name": "Faqs",
+					"item": [
+						{
+							"name": "Get All Faqs",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{server_path}}/faqs",
+									"host": [
+										"{{server_path}}"
+									],
+									"path": [
+										"faqs"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Faq",
+					"item": [
+						{
+							"name": "Post Faq",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"question\":\"Postman New Question\",\r\n    \"answer\":\"Postman New Answer\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{server_path}}/faq",
+									"host": [
+										"{{server_path}}"
+									],
+									"path": [
+										"faq"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Faq",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "authorization",
+										"value": "Bearer {{token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{server_path}}/faq/68f74bbfbca667712c6328cf",
+									"host": [
+										"{{server_path}}"
+									],
+									"path": [
+										"faq",
+										"68f74bbfbca667712c6328cf"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Faq",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "authorization",
+										"value": "",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": \"68f74bbfbca667712c6328cf\",\r\n    \"question\": \"Et andet spørgsmål\",\r\n    \"answer\": \"Et andet svar\"\r\n}"
+								},
+								"url": {
+									"raw": "{{server_path}}/faq",
+									"host": [
+										"{{server_path}}"
+									],
+									"path": [
+										"faq"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Faq By ID",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{server_path}}/faq/68f74bbfbca667712c6328cf",
+									"host": [
+										"{{server_path}}"
+									],
+									"path": [
+										"faq",
+										"68f74bbfbca667712c6328cf"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Reviews",
+			"item": [
+				{
+					"name": "Reviews",
+					"item": [
+						{
+							"name": "Get All Reviews",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{server_path}}/reviews",
+									"host": [
+										"{{server_path}}"
+									],
+									"path": [
+										"reviews"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Review",
+					"item": [
+						{
+							"name": "Post Review",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"Anders Mikkelsen\", \r\n    \"position\":\"Projektleder\",\r\n    \"text\": \"Cinestar imponerede med deres professionelle tilgang og kreative løsninger. Hele projektet blev håndteret effektivt, og resultatet var både flot og funktionelt. En oplevelse, der klart kan anbefales.\",\r\n    \"rating\": 4\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{server_path}}/review",
+									"host": [
+										"{{server_path}}"
+									],
+									"path": [
+										"review"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Review",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "authorization",
+										"value": "Bearer {{token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{server_path}}/review/68f74c96fb7f47fd12000d17",
+									"host": [
+										"{{server_path}}"
+									],
+									"path": [
+										"review",
+										"68f74c96fb7f47fd12000d17"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Review",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "authorization",
+										"value": "Bearer {{token}}",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": \"68f74c96fb7f47fd12000d17\",\r\n    \"text\": \"Et meget meget mærkeligt firma\",\r\n    \"rating\": 2\r\n}"
+								},
+								"url": {
+									"raw": "{{server_path}}/review",
+									"host": [
+										"{{server_path}}"
+									],
+									"path": [
+										"review"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Subscriptions",
+			"item": [
+				{
+					"name": "Subscriptions",
+					"item": [
+						{
+							"name": "Get All Subscriptions",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{server_path}}/subscriptions",
+									"host": [
+										"{{server_path}}"
+									],
+									"path": [
+										"subscriptions"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Subscription",
+					"item": [
+						{
+							"name": "Post Subscription",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\":\"nyemail2@mail.com\" \r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{server_path}}/subscription",
+									"host": [
+										"{{server_path}}"
+									],
+									"path": [
+										"subscription"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Subscription",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "authorization",
+										"value": "Bearer {{token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{server_path}}/subscription/68f74cdefb7f47fd12000d1d",
+									"host": [
+										"{{server_path}}"
+									],
+									"path": [
+										"subscription",
+										"68f74cdefb7f47fd12000d1d"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Blogs",
+			"item": [
+				{
+					"name": "Blog",
+					"item": [
+						{
+							"name": "Post Blog",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Nzg4ZDRjZmFiYTJjMGYyM2UyMjdiMTEiLCJlbWFpbCI6ImFkbWluQG1lZGlhY29sbGVnZS5kayIsIm5hbWUiOiJhZG1pbiIsInBpY3R1cmUiOiJodHRwOi8vbG9jYWxob3N0OjMwNDIvdXNlcnMvbm8tdXNlci5qcGciLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3MzcwMjM1MTYsImV4cCI6MTczNzEwOTkxNn0.oztQlcz3_Gr8z1wEdk08yR8V8OZU_pUjP_2nAbtt_FA",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "authorization",
+										"value": "Bearer {{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "title",
+											"value": "Film og TV",
+											"type": "text"
+										},
+										{
+											"key": "file",
+											"type": "file",
+											"src": "/C:/Users/AnneLundMøller/Pictures/rebecca.png"
+										},
+										{
+											"key": "description",
+											"value": "En beskrivelse af en dag i produktionen",
+											"type": "text"
+										},
+										{
+											"key": "teaser",
+											"value": "En lille teaser",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{server_path}}/blog",
+									"host": [
+										"{{server_path}}"
+									],
+									"path": [
+										"blog"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Blog",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "authorization",
+										"value": "Bearer {{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "id",
+											"value": "68f74ffcfb7f47fd12000d22",
+											"type": "text"
+										},
+										{
+											"key": "title",
+											"value": "Opdatering på blog titlen",
+											"type": "text"
+										},
+										{
+											"key": "file",
+											"type": "file",
+											"src": "/C:/MCDM_Arsenalet/One Day Viborg/materialer/Willbeck.jpg",
+											"disabled": true
+										},
+										{
+											"key": "description",
+											"value": "En opdateret udgave af beskrivelsen",
+											"type": "text"
+										},
+										{
+											"key": "teaser",
+											"value": "En lille forsmag på, hvad der venter",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{server_path}}/blog",
+									"host": [
+										"{{server_path}}"
+									],
+									"path": [
+										"blog"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Blog By ID",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "authorization",
+										"value": "Bearer {{token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{server_path}}/blog/68f74ffcfb7f47fd12000d22",
+									"host": [
+										"{{server_path}}"
+									],
+									"path": [
+										"blog",
+										"68f74ffcfb7f47fd12000d22"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Blog By ID",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{server_path}}/blog/68f74ffcfb7f47fd12000d22",
+									"host": [
+										"{{server_path}}"
+									],
+									"path": [
+										"blog",
+										"68f74ffcfb7f47fd12000d22"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Blogs",
+					"item": [
+						{
+							"name": "Get All Blogs",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{server_path}}/blogs",
+									"host": [
+										"{{server_path}}"
+									],
+									"path": [
+										"blogs"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "SignIn",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\" : \"admin@mediacollege.dk\",\r\n    \"password\" : \"admin\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{server_path}}/auth/signin",
+							"host": [
+								"{{server_path}}"
+							],
+							"path": [
+								"auth",
+								"signin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Token Check",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{server_path}}/auth/token",
+							"host": [
+								"{{server_path}}"
+							],
+							"path": [
+								"auth",
+								"token"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

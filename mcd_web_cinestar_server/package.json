@@ -1,0 +1,37 @@
+{
+  "name": "mcd_web_cinestar_server",
+  "version": "1.0.0",
+  "description": "sad",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "Start Server": "nodemon index",
+    "Opret Database": "node -r dotenv/config ./lib/db/mcd/mcd.js"
+  },
+  "keywords": [],
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "body-parser": "^2.2.0",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "mime-types": "^3.0.1",
+    "mongoose": "^8.19.2",
+    "multer": "^2.0.2",
+    "uuid": "^13.0.0"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@eslint/js": "^9.38.0",
+    "@types/express": "^5.0.3",
+    "@types/jsonwebtoken": "^9.0.10",
+    "@types/multer": "^2.0.0",
+    "eslint": "^9.38.0",
+    "eslint-plugin-react": "^7.37.5",
+    "globals": "^16.4.0",
+    "nodemon": "^3.1.10"
+  }
+}

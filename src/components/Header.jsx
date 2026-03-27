@@ -7,6 +7,7 @@ const navItems = [
   { label: "Blog", path: "/blog" },
   { label: "FAQ", path: "/faq" },
   { label: "Kontakt", path: "/kontakt" },
+  { label: "Login", path: "/login" },
 ];
 
 const BurgerIcon = () => {

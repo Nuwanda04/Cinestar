@@ -2,11 +2,13 @@ import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import "./App.css";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
+import Backoffice from "./pages/Backoffice";
 import Blog from "./pages/Blog";
 import BlogDetail from "./pages/BlogDetail";
 import Faq from "./pages/Faq";
 import Home from "./pages/Home";
 import Kontakt from "./pages/Kontakt";
+import Login from "./pages/Login";
 import NotFound from "./pages/NotFound";
 
 function App() {
@@ -22,6 +24,8 @@ function App() {
             <Route path="/blog/:id" element={<BlogDetail />} />
             <Route path="/faq" element={<Faq />} />
             <Route path="/kontakt" element={<Kontakt />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/backoffice" element={<Backoffice />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </main>
