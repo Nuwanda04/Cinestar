@@ -52,6 +52,10 @@ next-env.d.ts
 /public/users/*
 !/public/users/no-user.jpg
 
+/public/blogs/*
+!/public/blogs/no-blog.jpg
+!/public/blogs/seed_*
+
 /public/employees/*
 !/public/employees/no-*
 !/public/employees/seed_*
